@@ -13,7 +13,7 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.min = 0;
     s.max = 0;
     
-   memcpy(&data[0],numberset,setlength);
+   void memcpy(&data[0],numberset,setlength);
     
    for( int  i =0 ;i <setlength;i++)
     {
