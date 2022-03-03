@@ -6,27 +6,26 @@ Stats compute_statistics(const float* numberset, int setlength) {
     Stats s;
     float data[setlength];
     float minData = 0;
-    float maxdata = 0;
+    float maxData = 0;
     static int totalValue = 0;
     s.average = 0;
     s.min = 0;
     s.max = 0;
-    
-    memcpy(&data[0],numberset,setlength);
+   
     
     for( int  i =0 ;i <setlength;i++)
     {
        /* total sum computation */
-       totalValue += data[i];
+       totalValue += *numberset[i];
        /* max value computation*/
-       if(maxData< data[i])
+       if(maxData< *numberset[i])
        {
-           maxData = data[i];
+           maxData = *numberset[i];
        }
        /* min value computation*/
-       if(minData> data[i])
+       if(minData> *numberset[i])
        {
-           minData = data[i];
+           minData = *numberset[i];
        }   
     }
     s.average = totalValue/setlength;
