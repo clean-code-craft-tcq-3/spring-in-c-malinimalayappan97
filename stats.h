@@ -3,7 +3,7 @@ typedef struct
   float average;
   float min;
   float max;
-}stats;
+}Stats;
 
 Stats compute_statistics(const float* numberset, int setlength);
 
