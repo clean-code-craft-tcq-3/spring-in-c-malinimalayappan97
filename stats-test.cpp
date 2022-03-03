@@ -11,13 +11,16 @@ TEST_CASE("reports average, minimum and maximum") {
     int setlength = sizeof(numberset) / sizeof(numberset[0]);
     Stats computedStats = compute_statistics(numberset, setlength);
     float epsilon = 0.001;
-    REQUIRE(abs(computedStats.average - 4.525) < epsilon);
+    REQUIRE(abs(computedStats.average - 4.525) epsilon);
     REQUIRE(abs(computedStats.max - 8.9) < epsilon);
     REQUIRE(abs(computedStats.min - 1.5) < epsilon);
 }
 
 TEST_CASE("average is NaN for empty array") {
     Stats computedStats = compute_statistics(0, 0);
+    REQUIRE(computedStats.average == NAN);
+    REQUIRE(computedStats.max == NAN);
+    REQUIRE(computedStats.min == NAN);   
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
     
