@@ -1,4 +1,5 @@
 #include "stats.h"
+#include <stdio.h>
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 
@@ -11,22 +12,27 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.average = 0;
     s.min = 0;
     s.max = 0;
-   
     
-    for( int  i =0 ;i <setlength;i++)
+   memcpy(&data[0],numberset,setlength);
+    
+   for( int  i =0 ;i <setlength;i++)
     {
        /* total sum computation */
-       totalValue += *numberset[i];
+       totalValue += data[i];
        /* max value computation*/
-       if(maxData< *numberset[i])
+       if(maxData< data[i])
        {
-           maxData = *numberset[i];
+           maxData = data[i];
        }
        /* min value computation*/
-       if(minData> *numberset[i])
+       if(minData> data[i])
        {
-           minData = *numberset[i];
+           minData = data[i];
        }   
+    }
+    s.average = totalValue/setlength;
+    s.min = minData;
+    s.max = maxData;   
     }
     s.average = totalValue/setlength;
     s.min = minData;
