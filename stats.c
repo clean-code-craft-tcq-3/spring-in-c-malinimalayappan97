@@ -36,11 +36,11 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.min = minData;
     s.max = maxData;  
     
-     if(0 ==setlength)
+     if(0 == setlength)
     {
-         s.average = NAN;
-    s.min = NAN;
-    s.max = NAN; 
+     s.average = NAN;
+     s.min = NAN;
+     s.max = NAN; 
     }
     
     return s;
