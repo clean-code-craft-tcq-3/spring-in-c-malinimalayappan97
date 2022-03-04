@@ -1,3 +1,4 @@
+#include "Stats1.h"
 typedef struct
 {
   float average;
