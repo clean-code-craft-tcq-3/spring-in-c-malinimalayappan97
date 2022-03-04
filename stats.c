@@ -1,5 +1,6 @@
-#include "stats.h"
 #include <stdio.h>
+#include "stats.h"
+#include <math.h>
 
 extern int emailAlerter();
 extern int ledAlerter();
@@ -46,7 +47,7 @@ Stats compute_statistics(const float* numberset, int setlength) {
 }
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], Stats computedStats)
 {
-    if(s.max > maxThreshold)
+    if(computedStats.max > maxThreshold)
     {
         
         emailAlertCallCount = alerters[0]();
