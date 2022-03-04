@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "Stats1.h"
 
 int emailAlertCallCount = 0;
