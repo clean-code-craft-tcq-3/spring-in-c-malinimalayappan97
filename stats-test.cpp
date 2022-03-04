@@ -8,6 +8,8 @@
 #include <stdlib.h>
 #include <math.h>
 
+extern int emailAlertCallCount ;
+extern int ledAlertCallCount ;
 TEST_CASE("reports average, minimum and maximum") {
     float numberset[] = {1.5, 8.9, 3.2, 4.5};
     int setlength = sizeof(numberset) / sizeof(numberset[0]);
