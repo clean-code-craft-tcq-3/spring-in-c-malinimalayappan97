@@ -8,12 +8,12 @@ extern int ledAlerter();
 
 Stats compute_statistics(const float* numberset, int setlength) {
     Stats s;
-    float minData = 0;
+    float minData = 0.o;
     float maxData = 0;
-    float totalValue = 0;
-    s.average = 0;
-    s.min = 0;
-    s.max = 0;
+    float totalValue = 0.0;
+    s.average = 0.0;
+    s.min = numberset[0];
+    s.max = numberset[0];
     
    
     
