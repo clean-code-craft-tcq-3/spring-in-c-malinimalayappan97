@@ -10,7 +10,7 @@ Stats compute_statistics(const float* numberset, int setlength) {
     Stats s;
     float minData = 0;
     float maxData = 0;
-    static int totalValue = 0;
+    static float totalValue = 0;
     s.average = 0;
     s.min = 0;
     s.max = 0;
