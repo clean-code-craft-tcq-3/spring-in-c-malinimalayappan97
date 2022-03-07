@@ -15,7 +15,14 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.min = 0.0;
     s.max = 0.0;
     
-   
+    if(0 == setlength)
+    {
+     s.average = __FLT_HAS_QUIET_NAN__;
+     s.min = __FLT_HAS_QUIET_NAN__;
+     s.max = __FLT_HAS_QUIET_NAN__; 
+    }
+    else
+    {
     
    for( int  i =0 ;i <setlength;i++)
     {
@@ -35,13 +42,8 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.average = totalValue/setlength;
     s.min = minData;
     s.max = maxData;  
-    
-     if(0 == setlength)
-    {
-     s.average = __FLT_HAS_QUIET_NAN__;
-     s.min = __FLT_HAS_QUIET_NAN__;
-     s.max = __FLT_HAS_QUIET_NAN__; 
     }
+    
     
     return s;
 }
